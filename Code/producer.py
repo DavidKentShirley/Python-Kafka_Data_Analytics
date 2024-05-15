@@ -10,7 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv('OPENWEATHER_API_KEY')
 CITY = 'Flushing'
-URL = f'http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}'
+COUNTRY = 'USA'
+URL = f'http://api.openweathermap.org/data/2.5/weather?q={CITY},{COUNTRY}&appid={API_KEY}'
 
 #Kafka settings
 KAFKA_TOPIC = 'weather_data'
