@@ -1,93 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_bd88430411239411918ecd4bcc3c6463 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
-        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    
-    
-            <div class="folium-map" id="map_bd88430411239411918ecd4bcc3c6463" ></div>
-        
+    <div class="container">
+        <h1 class="mt-5">Weather Map</h1>
+        <div id="map" style="width: 100%; height: 500px;">
+            <iframe src="{{ url_for('static', filename='weather_map.html') }}" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+        <a href="/" class="btn btn-secondary mt-3">Go Back</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<script>
-    
-    
-            var map_bd88430411239411918ecd4bcc3c6463 = L.map(
-                "map_bd88430411239411918ecd4bcc3c6463",
-                {
-                    center: [40.7898, -73.7471],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 10,
-                    zoomControl: true,
-                    preferCanvas: false,
-                }
-            );
-
-            
-
-        
-    
-            var tile_layer_6f82f779a73b04bf7fd7a4ce25961590 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            );
-        
-    
-            tile_layer_6f82f779a73b04bf7fd7a4ce25961590.addTo(map_bd88430411239411918ecd4bcc3c6463);
-        
-    
-            var marker_77b9eb4d4dc9103a18f590a056939a0b = L.marker(
-                [40.7898, -73.7471],
-                {}
-            ).addTo(map_bd88430411239411918ecd4bcc3c6463);
-        
-    
-        var popup_f1ac0cece417bc665dca809957a08711 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_9f01ebf9e97ecfee00e7dbb292ab3efb = $(`<div id="html_9f01ebf9e97ecfee00e7dbb292ab3efb" style="width: 100.0%; height: 100.0%;">City: Yonkers<br>Temperature: 59.45°F<br>Description: light intensity drizzle</div>`)[0];
-                popup_f1ac0cece417bc665dca809957a08711.setContent(html_9f01ebf9e97ecfee00e7dbb292ab3efb);
-            
-        
-
-        marker_77b9eb4d4dc9103a18f590a056939a0b.bindPopup(popup_f1ac0cece417bc665dca809957a08711)
-        ;
-
-        
-    
-</script>
 </html>

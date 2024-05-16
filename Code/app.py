@@ -37,14 +37,8 @@ def generate_map(weather_data):
     map_ = folium.Map(location=[lat, lon], zoom_start=10)
     popup_text = f"City: {city}<br>Temperature: {temp_f:.2f}°F<br>Description: {description}"
     folium.Marker([lat, lon], popup=popup_text).add_to(map_)
-    map_.save('templates/weather_map.html')
+    map_.save('static/weather_map.html')
 
-    with open('static/weather_map.html', 'a') as f:
-        f.write('''
-            <div style="position: absolute; bottom: 10px; left: 10px;">
-            <a href="/" style="background-color: white; padding: 10px; border: 1px solid black; text-decoration: none;">Go Back</a>
-        </div>
-        ''')
 
 if __name__ == "__main__":
     if not os.path.exists('static'):
